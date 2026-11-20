@@ -1,0 +1,5 @@
+$ python -m flake8 smart_home.py
+$ echo $?
+0
+
+(no output: flake8 reports 0 issues on the cleaned file)

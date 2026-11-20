@@ -1,0 +1,62 @@
+$ python -m pytest test_highway_toll.py -v --cov=highway_toll --cov-branch --cov-report=term-missing
+
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0 -- /usr/local/bin/python
+cachedir: .pytest_cache
+rootdir: /home/claude/build/SE_Lab6_PES2UG24CS226
+plugins: platformdirs-4.13.5, anyio-4.15.1, cov-7.1.0
+collecting ... collected 43 items
+
+test_highway_toll.py::test_ambulance_is_exempt PASSED                    [  2%]
+test_highway_toll.py::test_two_axle_base_toll PASSED                     [  4%]
+test_highway_toll.py::test_toll_for_rejects_fewer_than_two_axles[1] PASSED [  6%]
+test_highway_toll.py::test_toll_for_rejects_fewer_than_two_axles[0] PASSED [  9%]
+test_highway_toll.py::test_toll_for_rejects_fewer_than_two_axles[-1] PASSED [ 11%]
+test_highway_toll.py::test_toll_for_rejects_fewer_than_two_axles[-10] PASSED [ 13%]
+test_highway_toll.py::test_toll_for_accepts_exactly_two_axles PASSED     [ 16%]
+test_highway_toll.py::test_base_toll_from_table[2-100] PASSED            [ 18%]
+test_highway_toll.py::test_base_toll_from_table[3-150] PASSED            [ 20%]
+test_highway_toll.py::test_base_toll_from_table[4-250] PASSED            [ 23%]
+test_highway_toll.py::test_base_toll_falls_back_to_flat_rate[5] PASSED   [ 25%]
+test_highway_toll.py::test_base_toll_falls_back_to_flat_rate[6] PASSED   [ 27%]
+test_highway_toll.py::test_base_toll_falls_back_to_flat_rate[10] PASSED  [ 30%]
+test_highway_toll.py::test_base_toll_falls_back_to_flat_rate[18] PASSED  [ 32%]
+test_highway_toll.py::test_peak_adds_twenty_five_percent PASSED          [ 34%]
+test_highway_toll.py::test_off_peak_charges_the_base_rate PASSED         [ 37%]
+test_highway_toll.py::test_peak_applies_to_the_flat_rate_too PASSED      [ 39%]
+test_highway_toll.py::test_fastag_gives_two_axle_vehicles_ten_percent PASSED [ 41%]
+test_highway_toll.py::test_fastag_gives_larger_vehicles_five_percent[3-142.5] PASSED [ 44%]
+test_highway_toll.py::test_fastag_gives_larger_vehicles_five_percent[4-237.5] PASSED [ 46%]
+test_highway_toll.py::test_fastag_gives_larger_vehicles_five_percent[5-380.0] PASSED [ 48%]
+test_highway_toll.py::test_no_fastag_means_no_discount PASSED            [ 51%]
+test_highway_toll.py::test_peak_and_fastag_combine[2-112.5] PASSED       [ 53%]
+test_highway_toll.py::test_peak_and_fastag_combine[3-178.12] PASSED      [ 55%]
+test_highway_toll.py::test_peak_and_fastag_combine[4-296.88] PASSED      [ 58%]
+test_highway_toll.py::test_peak_and_fastag_combine[5-475.0] PASSED       [ 60%]
+test_highway_toll.py::test_result_is_rounded_to_two_decimals PASSED      [ 62%]
+test_highway_toll.py::test_exempt_vehicles_pay_nothing[ambulance] PASSED [ 65%]
+test_highway_toll.py::test_exempt_vehicles_pay_nothing[fire_engine] PASSED [ 67%]
+test_highway_toll.py::test_non_exempt_vehicles_are_charged[car] PASSED   [ 69%]
+test_highway_toll.py::test_non_exempt_vehicles_are_charged[truck] PASSED [ 72%]
+test_highway_toll.py::test_non_exempt_vehicles_are_charged[bus] PASSED   [ 74%]
+test_highway_toll.py::test_non_exempt_vehicles_are_charged[AMBULANCE] PASSED [ 76%]
+test_highway_toll.py::test_non_exempt_vehicles_are_charged[] PASSED      [ 79%]
+test_highway_toll.py::test_toll_charge_passes_its_arguments_through PASSED [ 81%]
+test_highway_toll.py::test_toll_charge_propagates_invalid_axle_count PASSED [ 83%]
+test_highway_toll.py::test_pass_advice_recommends_buying_when_trips_cost_more PASSED [ 86%]
+test_highway_toll.py::test_pass_advice_says_either_when_the_costs_match PASSED [ 88%]
+test_highway_toll.py::test_pass_advice_recommends_paying_per_trip_when_cheaper PASSED [ 90%]
+test_highway_toll.py::test_pass_advice_with_no_trips_skips_the_loop PASSED [ 93%]
+test_highway_toll.py::test_pass_advice_with_no_trips_and_a_free_pass PASSED [ 95%]
+test_highway_toll.py::test_pass_advice_mixes_peak_and_fastag_trips PASSED [ 97%]
+test_highway_toll.py::test_pass_advice_propagates_invalid_axle_count PASSED [100%]
+
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.13.18-final-0 _______________
+
+Name              Stmts   Miss Branch BrPart  Cover   Missing
+-------------------------------------------------------------
+highway_toll.py      28      0     18      0   100%
+-------------------------------------------------------------
+TOTAL                28      0     18      0   100%
+============================== 43 passed in 0.08s ==============================
